@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+
+files:
+  - source: target/sb-webapp.war
+    destination: /sb-webapp-1/
+
+permissions:
+  - object: /
+    pattern: "**"
