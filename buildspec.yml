@@ -6,10 +6,11 @@ phases:
       - aws --version
       #- $(aws ecr get-login --region ap-south-1 --no-include-email)
 #      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin YOUR_AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com
-      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 654654471060.dkr.ecr.us-east-1.amazonaws.com
+      #- aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 654654471060.dkr.ecr.us-east-1.amazonaws.com
+      - aws ecr get-login-password --region us-east-1
       - # Replace with this to your repository URI
-      - REPOSITORY_URI=YOUR_AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/spring-demo-ecr
-      - IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
+      #- REPOSITORY_URI=YOUR_AWS_ACCOUNT_ID.dkr.ecr.us-east-1.amazonaws.com/spring-demo-ecr
+      #- IMAGE_TAG=build-$(echo $CODEBUILD_BUILD_ID | awk -F":" '{print $2}')
   build:
     commands:
       - echo Build started on `date`
